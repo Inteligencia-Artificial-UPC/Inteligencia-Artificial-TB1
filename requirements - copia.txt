@@ -1,4 +1,4 @@
-certifi==2020.4.5.1
+certifi==2019.11.28
 chardet==3.0.4
 click==7.1.1
 Flask==1.1.2
@@ -9,12 +9,14 @@ gunicorn==20.0.4
 idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.11.2
-lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
-pylint==2.4.4
+numpy==1.18.2
+python-dateutil==2.8.1
 requests==2.23.0
 six==1.14.0
-typing-extensions==3.7.4.2
-urllib3==1.25.9
+urllib3==1.25.8
+watson-developer-cloud==2.10.1
+websocket-client==0.48.0
 Werkzeug==1.0.1
-wrapt==1.11.2
+type-extensions
+typing_extensions
