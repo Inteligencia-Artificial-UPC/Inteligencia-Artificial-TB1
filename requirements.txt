@@ -19,3 +19,4 @@ watson-developer-cloud==2.10.1
 websocket-client==0.48.0
 Werkzeug==1.0.1
 type-extensions
+typing_extensions
