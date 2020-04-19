@@ -1,0 +1,6 @@
+Flask
+Flask-Cors
+geopy
+numpy
+requests
+typing-extensions
