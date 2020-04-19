@@ -6,6 +6,11 @@ from time import time
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/',methods=['GET'])
+def getFunction():
+    return "hola mundo funciona el deploy jeje"
+
+
 @app.route('/', methods=['POST'])
 def findRoutes():
     start_time = time()
@@ -35,4 +40,4 @@ def findRoutes():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False,port = 5000)
