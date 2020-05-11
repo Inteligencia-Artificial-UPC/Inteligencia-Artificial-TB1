@@ -1,5 +1,3 @@
-from typing_extensions import TypedDict
-from typing import List
 from service_client import ServiceClient
 import random
 import math

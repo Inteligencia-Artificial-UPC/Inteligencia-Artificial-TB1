@@ -1,1 +1,1 @@
-python controller.py
+web: gunicorn -b :$PORT controller:app
