@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from simulated_annealing import SimulatedAnnealing
 import GeneticAlgorithm
 from model import Coordinate, Route,RouteController
 from time import time
