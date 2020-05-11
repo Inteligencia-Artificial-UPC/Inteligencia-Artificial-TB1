@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from simulated_annealing import SimulatedAnnealing
+import GeneticAlgorithm
 from model import Coordinate, Route,RouteController
 from time import time
 app = Flask(__name__)
@@ -10,30 +11,24 @@ CORS(app)
 def getFunction():
     return "hola mundo funciona el deploy jeje"
 
-
 @app.route('/', methods=['POST'])
 def findRoutes():
     start_time = time()
     body = None
     body = request.get_json(force=True)
-    temp = request.args.get('use_heuristic')
-    flag = False
-    if temp != "false":
-        flag = True
-    print(body)
     lista = list(body)
     if len(lista) < 2:
         return []
-    destinations = None
-    destinations = RouteController()
+    destinations = []
     for i in lista:
-        destinations.add_cord(Coordinate(i['lat'],i['lng'],'A'))
+        destinations.append(Coordinate(i['lat'],i['lng'],'A'))
     #TODO
-    sa = None
-    sa = SimulatedAnnealing(destinations, initial_temperature=1000, cooling_rate=0.0015,use_heuristic=flag)
-    sa.run()
+    ga = None
+    ga = GeneticAlgorithm.GeneticAlgorithm(destinations,0.5,10)
+    ga.generations(2000)
+    best = ga.getBestIndividuo()
     response = []
-    for i in sa.best:
+    for i in best:
         response.append({'lat':i.lat,'lng':i.long})
     elapsed_time = time() - start_time
     print("Elapsed time: %0.10f seconds." % elapsed_time)

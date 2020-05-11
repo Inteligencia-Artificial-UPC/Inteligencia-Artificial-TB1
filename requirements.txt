@@ -20,3 +20,4 @@ websocket-client==0.48.0
 Werkzeug==1.0.1
 type-extensions
 typing_extensions
+numpy==1.18.2
